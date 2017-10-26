@@ -27,7 +27,10 @@ export default cc.Layer.extend({
 		if (!this.jumpLock) {
 			this.jumpLock = true;
 			const jumpAction = new cc.jumpBy(DINOSAUR_JUMP_TIME, cc.p(0, 0), 150, 1);
-			this.dinosaur.runAction(cc.sequence(jumpAction, 
+			const rotateAction = new cc.RotateBy(DINOSAUR_JUMP_TIME, 360);
+			const combineAction = new cc.Spawn();
+			combineAction.initWithTwoActions(jumpAction, rotateAction);
+			this.dinosaur.runAction(cc.sequence(combineAction, 
 					cc.callFunc(() => this.jumpLock = false, this)));
 		}
 	},

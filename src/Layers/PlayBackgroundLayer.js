@@ -6,6 +6,7 @@ export default cc.Layer.extend({
 	bg1: null, // Background 1
 	bg2: null, // Background 2
 	bgWidth: null,
+	level: 1,
 
 	ctor: function() {
 		this._super();
@@ -32,7 +33,7 @@ export default cc.Layer.extend({
 	},
 
 	update: function(dt) {
-		const distance = dt * BACKGROUND_SPEED;
+		const distance = dt * (BACKGROUND_SPEED + (this.level - 1) + 100);
 		const newPosBg1 = this.bg1.getPositionX() - distance;
 		const newPosBg2 = this.bg2.getPositionX() - distance;
 		this.bg1.setPositionX(newPosBg1);
@@ -50,5 +51,9 @@ export default cc.Layer.extend({
 
 	reset: function() {
 		this.scheduleUpdate();
+	},
+
+	nextLevel: function() {
+		this.level++;
 	}
 });
