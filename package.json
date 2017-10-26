@@ -1,0 +1,33 @@
+{
+  "name": "HelloWorld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack && cp main.*.js simulator\\win32\\main.js",
+    "start": "npm run webpack && cocos run -p win32",
+    "build": "npm run webpack && cp main.*.js simulator\\win32\\main.js && simulator\\win32\\dinosaur.exe"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class": "^0.3.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "eslint": "^4.9.0",
+    "eslint-loader": "^1.9.0",
+    "html-webpack-plugin": "^2.30.1",
+    "source-map-loader": "^0.2.2",
+    "webpack": "^3.7.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}

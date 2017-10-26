@@ -1,0 +1,53 @@
+2017-10-23T13:21:57.764Z - normal: Load ~/.CocosCreator/settings.json
+2017-10-23T13:21:57.771Z - normal: checking language setting...
+2017-10-23T13:21:57.772Z - normal: Language: en
+2017-10-23T13:22:00.227Z - success: protocol editor-framework registered
+2017-10-23T13:22:00.227Z - success: protocol app registered
+2017-10-23T13:22:00.228Z - success: protocol theme registered
+2017-10-23T13:22:00.228Z - success: protocol profile registered
+2017-10-23T13:22:00.228Z - success: protocol packages registered
+2017-10-23T13:22:00.228Z - success: protocol unpack registerred
+2017-10-23T13:22:00.228Z - success: protocol disable-commonjs registerred
+2017-10-23T13:22:00.648Z - normal: connected!
+2017-10-23T13:22:00.652Z - normal: Check project D:\_Project_Program\cocos\dinosaur
+2017-10-23T13:22:00.656Z - normal: Initializing Cocos2d
+2017-10-23T13:22:01.036Z - normal: Initializing Asset Database
+2017-10-23T13:22:01.093Z - success: protocol uuid registerred
+2017-10-23T13:22:01.094Z - success: protocol db registerred
+2017-10-23T13:22:01.094Z - success: protocol thumbnail registerred
+2017-10-23T13:22:01.094Z - normal: Loading editor/builtin packages
+2017-10-23T13:22:01.134Z - success: anysdk loaded
+2017-10-23T13:22:01.388Z - success: assets loaded
+2017-10-23T13:22:01.392Z - success: builder loaded
+2017-10-23T13:22:01.397Z - success: hierarchy loaded
+2017-10-23T13:22:01.402Z - success: inspector loaded
+2017-10-23T13:22:01.404Z - success: keystore loaded
+2017-10-23T13:22:01.408Z - success: node-library loaded
+2017-10-23T13:22:01.411Z - success: package-asset loaded
+2017-10-23T13:22:01.414Z - success: preferences loaded
+2017-10-23T13:22:01.417Z - success: project-exporter loaded
+2017-10-23T13:22:01.441Z - success: project-importer loaded
+2017-10-23T13:22:01.445Z - success: project-settings loaded
+2017-10-23T13:22:01.448Z - success: ui-kit loaded
+2017-10-23T13:22:01.451Z - success: ui-grid loaded
+2017-10-23T13:22:01.456Z - success: scene loaded
+2017-10-23T13:22:01.458Z - success: sprite-editor loaded
+2017-10-23T13:22:01.464Z - success: store loaded
+2017-10-23T13:22:01.471Z - success: timeline loaded
+2017-10-23T13:22:01.471Z - normal: Loading builtin packages
+2017-10-23T13:22:01.476Z - success: asset-db-debugger loaded
+2017-10-23T13:22:01.477Z - success: color-picker loaded
+2017-10-23T13:22:01.483Z - success: console loaded
+2017-10-23T13:22:01.486Z - success: package-manager loaded
+2017-10-23T13:22:01.493Z - success: sdkbox loaded
+2017-10-23T13:22:01.497Z - success: tester loaded
+2017-10-23T13:22:01.501Z - success: ui-kit-preview-extra loaded
+2017-10-23T13:22:01.504Z - success: ui-kit-preview loaded
+2017-10-23T13:22:01.507Z - success: ui-tree loaded
+2017-10-23T13:22:03.239Z - normal: Initializing project D:\_Project_Program\cocos\dinosaur
+2017-10-23T13:22:03.247Z - normal: Loading packages
+2017-10-23T13:22:03.266Z - normal: Watching packages
+2017-10-23T13:22:03.291Z - normal: Run Application
+2017-10-23T13:22:04.264Z - success: preview server running at http://localhost:7456
+2017-10-23T13:22:11.776Z - normal: 1.6.2
+2017-10-23T13:22:33.681Z - info: shutdown preview server
