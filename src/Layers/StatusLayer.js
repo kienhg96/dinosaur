@@ -1,12 +1,15 @@
 import cc from '../cc';
-import { BACKGROUND_SPEED } from '../configs/constants';
+import { BACKGROUND_SPEED, LEVEL_STEP } from '../configs/constants';
 
 export default cc.Layer.extend({
 	score: 0,
 	scoreLabel: null,
+	onNextLevel: null,
+	_lastScore: -1,
 
-	ctor: function() {
+	ctor: function(onNextLevel) {
 		this._super();
+		this.onNextLevel = onNextLevel;
 		this.render();
 		this.scheduleUpdate();
 	},
@@ -20,7 +23,17 @@ export default cc.Layer.extend({
 
 	update: function(dt) {
 		this.score += dt * BACKGROUND_SPEED / 100;
-		this.scoreLabel.setString(`Score: ${Math.round(this.score)}`);
+		const roundedScore = Math.round(this.score);
+		this.scoreLabel.setString(`Score: ${roundedScore}`);
+		if (roundedScore !== this._lastScore) {
+			this._lastScore = roundedScore;
+			if (roundedScore !== 0 && roundedScore % LEVEL_STEP === 0) {
+				if (this.onNextLevel) {
+					cc.log('Emit next level', roundedScore, LEVEL_STEP);
+					this.onNextLevel();
+				}
+			}
+		}
 	},
 
 	stop: function() {
@@ -29,6 +42,7 @@ export default cc.Layer.extend({
 
 	reset: function() {
 		this.score = 0;
+		this._lastScore = -1;
 		this.scoreLabel.setString("Score: 0");
 		this.scheduleUpdate();
 	}

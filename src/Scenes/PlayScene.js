@@ -26,7 +26,7 @@ export default cc.Scene.extend({
         this.background = new PlayBackgroundLayer();
         this.dinosaurLayer = new DinosaurLayer();
         this.cactusesLayer = new CactusesLayer();
-        this.statusLayer = new StatusLayer();
+        this.statusLayer = new StatusLayer(this.handleNextLevel.bind(this));
         this.addChild(this.background);
         this.addChild(this.dinosaurLayer);
         this.addChild(this.cactusesLayer);
@@ -81,5 +81,11 @@ export default cc.Scene.extend({
         this.dinosaurLayer.reset();
         this.statusLayer.reset();
         this.scheduleUpdate();
+    },
+
+    handleNextLevel: function() {
+        cc.log('Next level');
+        this.background.nextLevel();
+        this.cactusesLayer.nextLevel();
     }
 });

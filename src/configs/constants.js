@@ -8,4 +8,6 @@ export const COLLISION_OFFSET = 10;
 export const CACTUS_DISTANCE_MIN = 200;
 export const CACTUS_DISTANCE_MAX = 500;
 
+export const LEVEL_STEP = 50;
+
 /* eslint-enable */

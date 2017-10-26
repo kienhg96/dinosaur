@@ -2,6 +2,8 @@ import cc from '../cc';
 import { res } from '../resource';
 import { BACKGROUND_SPEED } from '../configs/constants';
 
+let _d = 0;
+
 export default cc.Layer.extend({
 	bg1: null, // Background 1
 	bg2: null, // Background 2
@@ -33,7 +35,11 @@ export default cc.Layer.extend({
 	},
 
 	update: function(dt) {
-		const distance = dt * (BACKGROUND_SPEED + (this.level - 1) + 100);
+		const distance = dt * (BACKGROUND_SPEED + (this.level - 1) * 100);
+		if (_d !== this.level) {
+			cc.log('New level', this.level);
+			_d = this.level;
+		}
 		const newPosBg1 = this.bg1.getPositionX() - distance;
 		const newPosBg2 = this.bg2.getPositionX() - distance;
 		this.bg1.setPositionX(newPosBg1);
@@ -50,6 +56,7 @@ export default cc.Layer.extend({
 	},
 
 	reset: function() {
+		this.level = 1;
 		this.scheduleUpdate();
 	},
 

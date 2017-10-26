@@ -49,7 +49,7 @@ export default cc.Layer.extend({
 	},
 
 	update: function(dt) {
-		const distance = dt * (BACKGROUND_SPEED + (this.level - 1) + 100);
+		const distance = dt * (BACKGROUND_SPEED + (this.level - 1) * 100);
 		this.long -= distance;
 		if (this.long <= 0) {
 			this.long = genereateLong(this.level);
@@ -91,6 +91,7 @@ export default cc.Layer.extend({
 		this.long = genereateLong(this.level);
 		this.cactusIndex = 0;
 		this.nearestCactusIndex = 0;
+		this.level = 1;
 		this.scheduleUpdate();
 	},
 
