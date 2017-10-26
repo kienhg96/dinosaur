@@ -1,7 +1,8 @@
 import cc from '../cc';
 import {
     PlayBackgroundLayer, DinosaurLayer,
-    CactusesLayer, StatusLayer
+    CactusesLayer, StatusLayer,
+    GameOverLayer
 } from '../Layers';
 import { COLLISION_OFFSET } from '../configs/constants';
 
@@ -9,6 +10,7 @@ export default cc.Scene.extend({
     backgroundLayer: null,
     dinosaurLayer: null,
     cactusesLayer: null,
+    gameOverLayer: null,
     // Cache
     dxLimit: 0,
     dyLimit: 0,
@@ -65,5 +67,19 @@ export default cc.Scene.extend({
         this.dinosaurLayer.stop();
         this.statusLayer.stop();
         this.unscheduleUpdate();
+        if (!this.gameOverLayer) {
+            this.gameOverLayer = new GameOverLayer(this.restart.bind(this));
+        }
+        this.addChild(this.gameOverLayer);
+    },
+
+    restart: function() {
+        cc.log('Restart game');
+        this.removeChild(this.gameOverLayer);
+        this.cactusesLayer.reset();
+        this.background.reset();
+        this.dinosaurLayer.reset();
+        this.statusLayer.reset();
+        this.scheduleUpdate();
     }
 });

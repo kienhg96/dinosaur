@@ -46,5 +46,9 @@ export default cc.Layer.extend({
 
 	stop: function() {
 		this.unscheduleUpdate();
+	},
+
+	reset: function() {
+		this.scheduleUpdate();
 	}
 });

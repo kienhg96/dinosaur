@@ -4,7 +4,6 @@ import { BACKGROUND_SPEED, CACTUS_POOL_LENGTH } from '../configs/constants';
 import _ from 'lodash';
 
 const DEFAULT_LONG = 300;
-
 export default cc.Layer.extend({
 	cactuses: null,
 	cactusIndex: 0,
@@ -49,7 +48,7 @@ export default cc.Layer.extend({
 			this.cactusIndex = (this.cactusIndex + 1) % CACTUS_POOL_LENGTH;
 			const cactus = this.cactuses[this.cactusIndex];
 			cactus.__r = true;
-			cactus.setPositionX(this.initPosition.x);			
+			cactus.setPositionX(this.initPosition.x);
 		}
 		this.cactuses.forEach(cactus => {
 			if (cactus.__r) {
@@ -68,5 +67,22 @@ export default cc.Layer.extend({
 
 	stop: function() {
 		this.unscheduleUpdate();
+	},
+
+	reset: function() {
+		const { winSize } = cc;
+		this.cactuses.map(cactus => {
+			const contentSize = cactus.getContentSize();
+			cactus.setPosition(cc.p(
+				winSize.width + contentSize.width / 2,
+				55 + contentSize.height / 2
+			));
+			cactus.__r = false; // Running
+		});
+		this.cactuses[0].__r = true;
+		this.long = DEFAULT_LONG;
+		this.cactusIndex = 0;
+		this.nearestCactusIndex = 0;
+		this.scheduleUpdate();
 	}
 });

@@ -25,5 +25,11 @@ export default cc.Layer.extend({
 
 	stop: function() {
 		this.unscheduleUpdate();
+	},
+
+	reset: function() {
+		this.score = 0;
+		this.scoreLabel.setString("Score: 0");
+		this.scheduleUpdate();
 	}
 });

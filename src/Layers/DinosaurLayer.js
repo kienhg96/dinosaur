@@ -43,5 +43,14 @@ export default cc.Layer.extend({
 
 	stop: function() {
 		cc.eventManager.removeListener(this.touchListener);
+	},
+
+	reset: function() {
+		// this.touchListener = cc.EventListener.create({
+		// 	event: cc.EventListener.TOUCH_ONE_BY_ONE,
+		// 	swallowTouches: true,
+		// 	onTouchBegan: this.jump.bind(this)
+		// });
+		cc.eventManager.addListener(this.touchListener, this);
 	}
 });
