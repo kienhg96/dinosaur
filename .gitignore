@@ -1,3 +1,6 @@
 /node_modules/
 /frameworks/
 /simulator/
+/index.html
+/main.*.js
+/main.*.js.map
